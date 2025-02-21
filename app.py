@@ -12,7 +12,7 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
-@app.route('/files', methods=['GET'])
+@app.route('/', methods=['GET'])
 def list_files():
     files = os.listdir(app.config['UPLOAD_FOLDER'])
     file_list = [{"filename": file} for file in files]
